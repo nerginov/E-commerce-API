@@ -13,7 +13,7 @@ const app = express();
 // Enable CORS
 app.use(
   cors({
-    origin: "*",
+    origin: process.env.ORIGIN,
   })
 );
 
