@@ -5,6 +5,8 @@ import contactRoutes from "./routes/contact.js";
 import stripeRoutes from "./routes/stripe.js";
 import cartRoutes from "./routes/cart.js";
 import cors from "cors";
+import dotenv from "dotenv"; // Importing the dotenv package to load environment variables from a .env file
+dotenv.config(); // Loading environment variables from the .env file
 
 const app = express();
 
@@ -29,4 +31,4 @@ app.use("/api/stripe", stripeRoutes);
 // Use Cart routes
 app.use("/api/cart", cartRoutes);
 
-app.listen(4000, () => {});
+app.listen(process.env.PORT, () => {});
